@@ -84,12 +84,12 @@ nrow(d2)
 #####(a) Fit a linear regression to these data, using quap. Present and interpret the estimates. For every 10 units of increase in weight, how much taller does the model predict a child gets?
 
 ```{r}
-xbar <- mean(d2$weight)
 library(rethinking)
 data(Howell1)
 d <- Howell1
 d2 <- Howell1[Howell1$age < 18, ]
 nrow(d2)
+xbar <- mean(d2$weight)
 m4.3 <- quap(
 alist(
 height ~ dnorm( mu , sigma ) ,
